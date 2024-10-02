@@ -1,0 +1,478 @@
+:root {
+    --main-color: #f48924;
+    --section-padding: 50px;
+    --section-bg: rgb(196 222 245 / 20%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Cairo", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main-heading{
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 30px auto 80px;
+}
+@media (max-width: 768px) {
+    .main-heading{
+        font-size: 35px;
+    }
+
+}
+/* small */
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+    }
+}
+/* medium */
+@media (min-width: 992px){
+    .container {
+        width: 970px;
+    }
+}
+/* large */
+@media (min-width: 1200px){
+    .container {
+        width: 1170px;
+    }
+}
+/* start header  */
+.header {
+    height: 70px;
+    position: relative;
+    border-bottom: solid 1px #eee;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .container .logo{
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 25px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header .container .logo span{
+    color: var(--main-color);
+}
+
+@media (min-width: 992px) {
+    .header .mega-menu .menu{
+        display: none;
+    }
+    
+}
+.header .mega-menu .menu i{
+    font-size: 30px;
+}
+.header .mega-menu .links{
+    display: flex;
+    align-items: center;
+}
+@media (max-width: 992px) {
+    .header .container .links{
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        background-color: white;
+        border-bottom: solid 1px #ddd;
+        display: none;
+        z-index: 99;
+    }
+    .header .container .mega-menu:hover .links{
+        display: block;
+    }
+}
+.header .mega-menu .links li a{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0 15px;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+.header .mega-menu .links li a:hover {
+    color: var(--main-color);
+}
+/* end header  */
+/* start landing */
+.landing {
+    position: relative;
+    background-image: url("../images/home-1.jpg");
+    height: calc(100vh - 70px);
+    background-size: cover;
+    background-position: center;
+}
+.landing::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 70%);
+}
+
+.landing .container .to-left,
+.landing .container .to-right{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.landing .container .to-left{
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.landing .container .to-right{
+    right: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@media (max-width: 992px) {
+    .landing .container .to-left{
+        left: 15px;
+    }
+    .landing .container .to-right{
+        right: 15px;
+    }
+}
+.landing .text{
+    color: white;
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+@media (max-width: 767px) {
+    .landing .text {
+        width: 100%;
+    }
+}
+.landing .text h2{
+    font-size: 50px;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+    .landing .text h2{
+        font-size: 30px;
+    }
+}
+.landing .text p{
+    width: 550px;
+    line-height: 2;
+    color: #ddd;
+    font-size: 18px;
+}
+@media (max-width: 767px) {
+    .landing .text p{
+        width: 100%;
+        font-size: 15px;
+        padding: 0 50px;
+    }
+}
+.landing .text a{
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0;
+    color: black;
+    background-color: var(--main-color);
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+    border: solid 1px var(--main-color);
+}
+.landing .text a:hover {
+    background-color: transparent;
+    color: white;
+}
+/* end landing */
+/* start About */
+.about {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-bg);
+}
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (max-width: 992px) {
+    .about .container {
+        flex-direction: column;
+    }
+}
+.about .image{
+    width: 400px;
+    height: 450px;
+}
+
+.about .image img{
+    max-width: 100%;
+    height: 100%;
+}
+@media (max-width: 992px) {
+    .about .image {
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 500px) {
+    .about .image {
+        width: 100%;
+    }
+}
+.about .text{
+    flex-basis: calc(100% - 500px);
+}
+.about .text h2{
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.about .text p{
+    font-size: 18px;
+    line-height: 1.6;
+    color: #777;
+}
+@media (max-width: 767px) {
+    .about .text h2{
+        font-size: 30px;
+    }
+    .about .text p{
+        font-size: 15px;
+    }
+}
+.about .text a{
+    display: block;
+    width: fit-content;
+    margin-top: 30px;
+    color: black;
+    background-color: var(--main-color);
+    padding: 6px 20px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+    border: solid 1px var(--main-color);
+}
+.about .text a:hover {
+    background-color: transparent;
+}
+/* end About */
+/* start services */
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.services .container .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.services .container .box{
+    background-color: #050f2c;
+    text-align: center;
+    padding: 0 20px;
+}
+.services .container .box i{
+    font-size: 50px;
+    margin: 40px 0 15px;
+    color: white;
+}
+.services .container .box h2{
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: white;
+}
+.services .container .box p{
+    font-size: 17px;
+    line-height: 1.8;
+    color: #ddd;
+}
+.services .container .box a{
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    background-color: var(--main-color);
+    color: black;
+    padding: 5px 15px;
+    border: solid 1px var(--main-color);
+    transition: 0.3s;
+    font-weight: bold;
+}
+.services .container .box a:hover {
+    background-color: transparent;
+    color: white;
+}
+/* end services */
+/* start portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-bg);
+}
+.portfolio .container .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 40px;
+}
+.portfolio .content .box {
+    text-align: center;
+    background-color: white;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px;
+}
+.portfolio .box img{
+    max-width: 100%;
+}
+.portfolio .box h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.portfolio .box p{
+    font-size: 18px;
+    line-height: 1.8;
+    color: #777;
+}
+.portfolio .container .box a{
+    display: block;
+    width: fit-content;
+    margin: 15px auto;
+    background-color: var(--main-color);
+    color: black;
+    padding: 5px 15px;
+    border: solid 1px var(--main-color);
+    transition: 0.3s;
+    font-weight: bold;
+}
+.portfolio .container .box a:hover {
+    background-color: transparent;
+}
+/* end portfolio */
+/* start team  */
+.team {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.team .container .content{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
+}
+.team .content .box {
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 15px;
+}
+.team .box img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px 0 10px;
+}
+.team .box h2{
+    font-size: 30px;
+    font-weight: 600;
+}
+.team .box p{
+    font-size: 18px;
+    line-height: 1.8;
+    color: #777;
+}
+.team .box .icons {
+    margin: 15px 0;
+}
+.team .box .icons a {
+    color: black;
+    font-size: 20px;
+    padding: 5px;
+    transition: 0.3s;
+}
+.team .box .icons a:hover {
+    color: var(--main-color);
+}
+/* end team  */
+/* start contact */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-bg);
+}
+.contact .container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+}
+.contact form .input{
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    outline: none;
+    border: solid 1px #ccc;
+}
+.contact form textarea{
+    resize: none;
+    height: 100px;
+}
+.contact form [type="submit"]{
+    width: 100%;
+    margin: 15px 0;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    border: solid 1px var(--main-color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.contact form [type="submit"]:hover {
+    background-color: transparent;
+}
+/* end contact */
+/* start footer */
+.footer {
+    background-color: #050f2c;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+/* end footer */
